@@ -2,9 +2,12 @@
 # Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
 # for headless setup. 
 
+# Installing dependencies:
+sudo apt-get install -y git
+sudo apt-get install -y gcc g++ autoconf automake libtool
+
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
-sudo apt-get install -y git
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node

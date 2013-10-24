@@ -5,6 +5,7 @@ configure both the machine and your individual development environment as
 follows:
 
 ```sh
+apt-get install curl
 curl https://raw.github.com/cmpsoares91/setup/master/setup.sh | sh
 ```
 

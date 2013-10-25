@@ -1,4 +1,6 @@
-# 
+#!/bin/bash
+
+# Simple setup.sh for ISMAT School Project
 
 if [ $1 == server ] then
 # Install Heroku toolbelt

@@ -11,7 +11,7 @@ wget https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup.sh
 sh ./setup.sh server
 
 # Else if you want to do a normal development install use:
-sh ./setup.sh developer
+sh ./setup.sh dev
 ```
 
 See also http://github.com/startup-class/dotfiles for more details.

@@ -2,6 +2,8 @@
 
 # Simple setup.sh for ISMAT School Project
 
+apt-get install curl
+
 if [ $1 == server ] then
     echo "Starting Server Instalation"
 

@@ -4,7 +4,7 @@
 
 apt-get install curl
 
-if [ $1 == server ] then
+if [ $1 == server ] ; then
     echo "Starting Server Instalation"
 
     # Instaling Base:
@@ -17,10 +17,10 @@ if [ $1 == server ] then
     # All extra stuff for server add here
 
     echo "Server Setup Ready"
-else
-if [ $1 == dev ] then
+
+elif [ $1 == dev ] ; then
     echo "Starting Developer Instalation"
-    
+
     # Instaling Base:
     curl https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup.sh | sh
 
@@ -28,3 +28,4 @@ if [ $1 == dev ] then
 else
     echo "No selection made."
 fi
+

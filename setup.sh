@@ -8,7 +8,7 @@ if [ $1 == server ] ; then
     echo "Starting Server Instalation"
 
     # Instaling Base:
-    curl https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup.sh | bash
+    curl https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup-base.sh | bash
 
     # Install Heroku toolbelt
     # https://toolbelt.heroku.com/debian
@@ -22,7 +22,7 @@ elif [ $1 == dev ] ; then
     echo "Starting Developer Instalation"
 
     # Instaling Base:
-    curl https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup.sh | bash
+    curl https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup-base.sh | bash
 
     echo "Developer Setup Ready"
 else

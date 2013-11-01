@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Simple setup.sh for ISMAT School Project
-
+cd
 apt-get install -y curl
 
 if [ $1 == server ] ; then

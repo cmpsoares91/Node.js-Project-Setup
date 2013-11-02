@@ -14,6 +14,13 @@ bash ./setup.sh server
 # Else if you want to do a normal development install use:
 bash ./setup.sh dev
 
+exit
+```
+Start a new terminal, the use the following commands:
+
+```sh
+sudo su
+
 # To load nvm and install latest production node
 
 source $HOME/.nvm/nvm.sh

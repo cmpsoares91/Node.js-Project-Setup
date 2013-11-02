@@ -14,9 +14,9 @@ sudo apt-get install -y build-essential libssl-dev
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node
-# source $HOME/.nvm/nvm.sh
-# nvm install v0.10
-# nvm use v0.10
+source $HOME/.nvm/nvm.sh
+nvm install v0.10
+nvm use v0.10
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/

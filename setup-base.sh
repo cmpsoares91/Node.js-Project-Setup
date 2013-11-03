@@ -5,8 +5,10 @@
 echo "Installing project structure:"
 
 # Installing dependencies:
+sudo apt-get update
 sudo apt-get install -y git
 sudo apt-get install -y gcc g++ autoconf automake libtool
+sudo apt-get install -y python-software-properties python make
 sudo apt-get install -y build-essential libssl-dev
 
 # Install nvm: node-version manager

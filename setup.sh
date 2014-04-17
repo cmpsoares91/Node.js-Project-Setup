@@ -5,7 +5,7 @@ cd
 apt-get install -y curl
 
 if [ $1 == server ] ; then
-    echo "Starting Server Instalation"
+    echo "Starting Server Instalation..."
 
     # Instaling Base:
     curl https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup-base.sh | sh
@@ -19,13 +19,23 @@ if [ $1 == server ] ; then
     echo "Server Setup Ready"
 
 elif [ $1 == dev ] ; then
-    echo "Starting Developer Instalation"
+    echo "Starting Developer Instalation..."
 
     # Instaling Base:
     curl https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup-base.sh | sh
 
     echo "Developer Setup Ready"
+
+elif [$2 == mean.io] ; then
+    echo "Starting MEAN JavaScript Stack Instalation..."
+    
+    #Add MEAN.io installation commands...
+
 else
     echo "No selection made."
 fi
+
+source $HOME/.nvm/nvm.sh
+nvm install v0.10.26
+nvm use v0.10.26
 

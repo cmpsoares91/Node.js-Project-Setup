@@ -60,7 +60,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre>
 
-[![Analytics](https://ga-beacon.appspot.com/UA-47034562-15/node-yahoo-finance/readme?pixel)](https://github.com/pilwon/node-yahoo-finance)
+[![Analytics](https://ga-beacon.appspot.com/UA-50149210-1/Node.js-Project-Setup/readme?pixel)](https://github.com/pilwon/node-yahoo-finance)
 
 
 

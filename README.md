@@ -24,8 +24,8 @@ sudo su
 # To load nvm and install latest production node
 
 source $HOME/.nvm/nvm.sh
-nvm install v0.10.21
-nvm use v0.10.21
+nvm install v0.10.26
+nvm use v0.10.26
 ```
 
 See also http://github.com/startup-class/dotfiles for more details.

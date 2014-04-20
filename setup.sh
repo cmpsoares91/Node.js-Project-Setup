@@ -112,9 +112,10 @@ if [ install == 1 ] ; then
             while [ c == 1 ]
             do
                 c=0
-	        read appOption
+	        	read appOption
                 if [ appOption == y ] ; then
-                    read myApp
+               		echo "----> Enter App name:"
+                	read myApp
                     mean init $myApp
                     cd $myApp && npm install
                     grunt

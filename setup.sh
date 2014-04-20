@@ -112,7 +112,7 @@ if [ install == 1 ] ; then
             while [ $c -e 1 ]
             do
                 c=0
-	            read appOption
+	        read appOption
                 if [ $appOption == y ] ; then
                     read myApp
                     mean init $myApp
@@ -132,6 +132,24 @@ if [ install == 1 ] ; then
         else
             echo "Please enter y or n:"
             a=1
+        fi
+    done
+    
+    g=1
+    while [ $g -e 1 ]
+    do
+    	g=0
+    	read gruntOption
+    	if [ $gruntOption == y ] ; then
+		# Install Grunt for automated node builds
+		# http://gruntjs.com/getting-started for details
+		npm install -g grunt-cli
+	elif [ $gruntOption == n ] ; then
+	        #Nothing Happens...
+                echo "--> Not Installing Grunt.js..."
+        else
+                echo "--> Please enter y or n:"
+                g=1
         fi
     done
 fi

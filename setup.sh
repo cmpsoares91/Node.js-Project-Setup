@@ -85,11 +85,11 @@ fi
 if [ install == 1 ] ; then 
     echo "Install MEAN JavaScript Stack as well? (y/n)"
     a=1
-    while [ $a -e 1 ]
+    while [ a == 1 ]
     do
         a=0
         read meanOption
-        if [ $meanOption == y ] ; then
+        if [ meanOption == y ] ; then
             echo "Starting MEAN JavaScript Stack Instalation..."
 
             #Add MEAN.io installation commands...
@@ -109,16 +109,16 @@ if [ install == 1 ] ; then
             #Start App Right away?
             echo "--> Want to initiate mean App now? (y/n)"
             c=1
-            while [ $c -e 1 ]
+            while [ c == 1 ]
             do
                 c=0
 	        read appOption
-                if [ $appOption == y ] ; then
+                if [ appOption == y ] ; then
                     read myApp
                     mean init $myApp
                     cd $myApp && npm install
                     grunt
-                elif [ $appOption == n ] ; then
+                elif [ appOption == n ] ; then
                     #Nothing Happens...
                     echo "--> Not initiation App..."
                 else
@@ -126,7 +126,7 @@ if [ install == 1 ] ; then
                     c=1
                 fi
             done
-        elif [ $meanOption == n ] ; then
+        elif [ meanOption == n ] ; then
             #Nothing Happens...
             echo "Not installing MEAN..."
         else
@@ -136,15 +136,15 @@ if [ install == 1 ] ; then
     done
     
     g=1
-    while [ $g -e 1 ]
+    while [ g == 1 ]
     do
     	g=0
     	read gruntOption
-    	if [ $gruntOption == y ] ; then
+    	if [ gruntOption == y ] ; then
 		# Install Grunt for automated node builds
 		# http://gruntjs.com/getting-started for details
 		npm install -g grunt-cli
-	elif [ $gruntOption == n ] ; then
+	elif [ gruntOption == n ] ; then
 	        #Nothing Happens...
                 echo "--> Not Installing Grunt.js..."
         else

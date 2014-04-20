@@ -8,13 +8,12 @@ the machine and your individual development environment as follows:
 sudo su
 wget https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup.sh
 
+#You can select the following options:
 # If you want to setup on a new EC2 instance running Ubuntu 12.04.2 LTS for final setup use:
 bash ./setup.sh server
 
 # Else if you want to do a normal development install use:
 bash ./setup.sh dev
-
-exit
 ```
 Start a new terminal, the use the following commands:
 

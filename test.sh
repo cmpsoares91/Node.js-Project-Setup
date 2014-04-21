@@ -1,6 +1,8 @@
-#Bash Script for installation testing
+#!/bin/bash
 
-#Need to add commands to test it...
+#Bash Script for installation testing
+#Link: http://stackoverflow.com/questions/592620/how-to-check-if-a-program-exists-from-a-bash-script
+
 echo "Testing Basic dependencies:"
 for cmd in "git" "gcc" "g++" "autoconf" "automake" "libtool" "python" "make" ; do
   printf "%-30s" "$cmd"

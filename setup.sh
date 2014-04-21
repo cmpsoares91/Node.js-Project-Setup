@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Added this usefull function from a Stack Overflow post:
+#Link: http://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
 function coloredEcho(){
     local exp=$1;
     local color=$2;
@@ -19,6 +21,10 @@ function coloredEcho(){
     echo $exp;
     tput sgr0;
 }
+
+#Base installation function:
+#Is from:
+#Link: https://github.com/startup-class/setup/blob/master/setup.sh
 
 function baseInstall() {
 	# Simple setup.sh for ISMAT School Project

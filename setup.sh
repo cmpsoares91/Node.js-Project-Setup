@@ -102,6 +102,8 @@ else
     install=0
 fi
 
+echo $install
+
 if [ $install == 1 ] ; then 
     coloredEcho "Install MEAN JavaScript Stack as well? (y/n)" magenta
     a=1

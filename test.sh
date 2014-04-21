@@ -3,13 +3,13 @@
 #Need to add commands to test it...
 echo "Testing Basic dependencies:"
 for cmd in "git" "gcc" "g++" "autoconf" "automake" "libtool" "python" "make" ; do
-  printf "%-20s" "$cmd"
+  printf "%-30s" "$cmd"
   if hash "$cmd" 2>/dev/null; then printf "OK\n"; else printf "missing\n"; fi
 done
 
 echo -e "\nTesting Basic command line editor installations:"
 for cmd in "rlwrap" "emacs" "nano"; do
-  printf "%-10s" "$cmd"
+  printf "%-30s" "$cmd"
   if hash "$cmd" 2>/dev/null; then printf "OK\n"; else printf "missing\n"; fi
 done
 

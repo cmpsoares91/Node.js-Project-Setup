@@ -29,7 +29,7 @@ function coloredEcho(){
 function baseInstall() {
 	# Simple setup.sh for ISMAT School Project
 	cd
-	apt-get install -y curl
+	sudo apt-get install -y curl
 	
 	coloredEcho "Installing project structure:" blue
 
@@ -45,20 +45,22 @@ function baseInstall() {
 	sudo add-apt-repository -y ppa:cassou/emacs
 	sudo apt-get -qq update
 	sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
-
-	# Install nvm: node-version manager
-	# https://github.com/creationix/nvm
-	git clone https://github.com/creationix/nvm.git ~/.nvm
-	source ~/.nvm/nvm.sh
 	
 	#Installing last node and npm version
 	sudo apt-add-repository ppa:chris-lea/node.js
+	sudo apt-add-repository ppa:chris-lea/nodejs-legacy
 	sudo apt-get update
-	apt-get install nodejs
+	sudo apt-get install -y nodejs nodejs-legacy
+	
+	
+	# Install nvm: node-version manager
+	# Link: https://www.npmjs.org/package/nvm
+	sudo npm install -g nvm
+	sudo export PATH=./node_modules/.bin:$PATH
 	
 	# Install jshint to allow checking of JS code within emacs
 	# http://jshint.com/
-	npm install -g jshint
+	sudo npm install -g jshint
 
 	# Install rlwrap to provide libreadline features with node
 	# See: http://nodejs.org/api/repl.html#repl_repl
@@ -120,8 +122,6 @@ if [ $install == 1 ] ; then
         read meanOption
         if [ $meanOption == y ] ; then
             coloredEcho "Starting MEAN JavaScript Stack Instalation..." red
-
-            #Add MEAN.io installation commands...
     
             #Installing MongoDB:
             sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -130,7 +130,7 @@ if [ $install == 1 ] ; then
             sudo apt-get install -y mongodb-org
 
             #Installing Bower:
-            npm install bower
+            sudo npm install -g bower
 
             #Installing MEAN.io:
             sudo npm install -g meanio@latest
@@ -174,7 +174,7 @@ if [ $install == 1 ] ; then
     	if [ $gruntOption == y ] ; then
 		# Install Grunt for automated node builds
 		# http://gruntjs.com/getting-started for details
-		npm install -g grunt-cli
+		sudo npm install -g grunt-cli
 	elif [ $gruntOption == n ] ; then
 	        #Nothing Happens...
                 coloredEcho "--> Not Installing Grunt.js..." green

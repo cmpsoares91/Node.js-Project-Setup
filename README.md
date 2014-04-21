@@ -20,8 +20,7 @@ Start a new terminal, the use the following commands:
 ```sh
 sudo su
 
-# To load nvm and install latest production node
-
+# Might be necessary to load nvm and install latest production node if it wasn't able to do it automatically:
 source $HOME/.nvm/nvm.sh
 nvm install v0.10.26
 nvm use v0.10.26
@@ -38,7 +37,7 @@ nvm use v0.10.26
 <pre>
 The MIT License (MIT)
 
-Copyright (c) 2013-2014 Pilwon Huh
+Copyright (c) 2013-2014 Carlos Soares
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

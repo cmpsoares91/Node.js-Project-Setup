@@ -39,6 +39,7 @@ function baseInstall() {
 	sudo apt-get install -y gcc g++ autoconf automake libtool
 	sudo apt-get install -y python-software-properties python make
 	sudo apt-get install -y build-essential libssl-dev
+	sudo apt-get install -y software-properties-common
 
 	# Install emacs24
 	# https://launchpad.net/~cassou/+archive/emacs
@@ -46,11 +47,15 @@ function baseInstall() {
 	sudo apt-get -qq update
 	sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 	
+	# Install rlwrap to provide libreadline features with node
+	# See: http://nodejs.org/api/repl.html#repl_repl
+	sudo apt-get install -y rlwrap
+	
 	#Installing last node and npm version
 	sudo apt-add-repository -y ppa:chris-lea/node.js
-	sudo apt-get -qq update
-	sudo apt-get install -y nodejs nodejs-legacy
-	
+	sudo apt-get update
+	sudo apt-get install -y nodejs node
+	ln -s /usr/bin/nodejs /usr/bin/node
 	
 	# Install nvm: node-version manager
 	# Link: https://www.npmjs.org/package/nvm
@@ -60,10 +65,6 @@ function baseInstall() {
 	# Install jshint to allow checking of JS code within emacs
 	# http://jshint.com/
 	sudo npm install -g jshint
-
-	# Install rlwrap to provide libreadline features with node
-	# See: http://nodejs.org/api/repl.html#repl_repl
-	sudo apt-get install -y rlwrap
 
 	# git pull and install dotfiles as well
 	cd $HOME

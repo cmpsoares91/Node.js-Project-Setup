@@ -54,8 +54,10 @@ function baseInstall() {
 
 	# Load nvm and install latest production node
 	source $HOME/.nvm/nvm.sh
-	nvm install v0.10
-	nvm use v0.10
+	source ~/.profile
+	nvm ls-remote
+	nvm install v0.10.26
+	nvm use v0.10.26
 
 	# git pull and install dotfiles as well
 	cd $HOME

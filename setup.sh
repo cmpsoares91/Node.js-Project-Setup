@@ -1,11 +1,31 @@
 #!/bin/bash
 
+function coloredEcho(){
+    local exp=$1;
+    local color=$2;
+    if ! [[ $color =~ '^[0-9]$' ]] ; then
+       case $(echo $color | tr '[:upper:]' '[:lower:]') in
+        black) color=0 ;;
+        red) color=1 ;;
+        green) color=2 ;;
+        yellow) color=3 ;;
+        blue) color=4 ;;
+        magenta) color=5 ;;
+        cyan) color=6 ;;
+        white|*) color=7 ;; # white or invalid color
+       esac
+    fi
+    tput setaf $color;
+    echo $exp;
+    tput sgr0;
+}
+
 function baseInstall() {
 	# Simple setup.sh for ISMAT School Project
 	cd
 	apt-get install -y curl
 	
-	echo "Installing project structure:"
+	coloredEcho "Installing project structure:" blue
 
 	# Installing dependencies:
 	sudo apt-get update
@@ -56,7 +76,7 @@ function baseInstall() {
 install=1
 
 if [ $1 == server ] ; then
-    echo "Starting Server Instalation..."
+    coloredEcho "Starting Server Instalation..." red
 
     # Instaling Base:
     baseInstall
@@ -67,30 +87,30 @@ if [ $1 == server ] ; then
 
     # All extra stuff for server add here
 
-    echo "Server Setup Ready"
+    coloredEcho "Server Setup Ready" red
 
 elif [ $1 == dev ] ; then
-    echo "Starting Developer Instalation..."
+    coloedEcho "Starting Developer Instalation..." green
 
     # Instaling Base:
     baseInstall
 
-    echo "Developer Setup Ready"
+    coloredEcho "Developer Setup Ready" green
  
 else
-    echo "No selection made."
+    coloredEcho "No selection made." blue
     install=0
 fi
 
-if [ install == 1 ] ; then 
-    echo "Install MEAN JavaScript Stack as well? (y/n)"
+if [ $install == 1 ] ; then 
+    coloredEcho "Install MEAN JavaScript Stack as well? (y/n)" magenta
     a=1
-    while [ a == 1 ]
+    while [ $a == 1 ]
     do
         a=0
         read meanOption
-        if [ meanOption == y ] ; then
-            echo "Starting MEAN JavaScript Stack Instalation..."
+        if [ $meanOption == y ] ; then
+            coloredEcho "Starting MEAN JavaScript Stack Instalation..." red
 
             #Add MEAN.io installation commands...
     
@@ -107,49 +127,50 @@ if [ install == 1 ] ; then
             sudo npm install -g meanio@latest
         
             #Start App Right away?
-            echo "--> Want to initiate mean App now? (y/n)"
+            coloredEcho "--> Want to initiate mean App now? (y/n)" red
             c=1
-            while [ c == 1 ]
+            while [ $c == 1 ]
             do
                 c=0
-	        	read appOption
-                if [ appOption == y ] ; then
-               		echo "----> Enter App name:"
+	        read appOption
+                if [ $appOption == y ] ; then
+               		coloredEcho "----> Enter App name:" red
                 	read myApp
                     mean init $myApp
                     cd $myApp && npm install
                     grunt
-                elif [ appOption == n ] ; then
+                elif [ $appOption == n ] ; then
                     #Nothing Happens...
-                    echo "--> Not initiation App..."
+                    coloredEcho "--> Not initiation App..." red
                 else
-                    echo "--> Please enter y or n:"
+                    coloredEcho "--> Please enter y or n:" red
                     c=1
                 fi
             done
-        elif [ meanOption == n ] ; then
+        elif [ $meanOption == n ] ; then
             #Nothing Happens...
-            echo "Not installing MEAN..."
+            coloredEcho "Not installing MEAN..." red
         else
-            echo "Please enter y or n:"
+            coloredEcho "Please enter y or n:" magenta
             a=1
         fi
     done
     
     g=1
-    while [ g == 1 ]
+    while [ $g == 1 ]
     do
     	g=0
+    	coloredEcho "Do you want to install Grunt.JS? (y/n)" green
     	read gruntOption
-    	if [ gruntOption == y ] ; then
+    	if [ $gruntOption == y ] ; then
 		# Install Grunt for automated node builds
 		# http://gruntjs.com/getting-started for details
 		npm install -g grunt-cli
-	elif [ gruntOption == n ] ; then
+	elif [ $gruntOption == n ] ; then
 	        #Nothing Happens...
-                echo "--> Not Installing Grunt.js..."
+                coloredEcho "--> Not Installing Grunt.js..." green
         else
-                echo "--> Please enter y or n:"
+                coloredEcho "--> Please enter y or n:" green
                 g=1
         fi
     done

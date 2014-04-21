@@ -51,11 +51,12 @@ function baseInstall() {
 	# See: http://nodejs.org/api/repl.html#repl_repl
 	sudo apt-get install -y rlwrap
 	
-	#Installing last node and npm version
+	# Installing last node and npm version
 	sudo apt-add-repository -y ppa:chris-lea/node.js
 	sudo apt-get update
-	sudo apt-get install -y nodejs node
-	ln -s /usr/bin/nodejs /usr/bin/node
+	sudo apt-get install -y nodejs
+	# Still Testing if this is necessary:
+	# ln -s /usr/bin/nodejs /usr/bin/node
 	
 	# Install nvm: node-version manager
 	# Link: https://www.npmjs.org/package/nvm

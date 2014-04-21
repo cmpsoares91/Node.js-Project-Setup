@@ -3,7 +3,7 @@
 #Need to add commands to test it...
 echo "Testing Basic dependencies:"
 for cmd in "git" "gcc" "g++" "autoconf" "automake" "libtool" "python" "make" ; do
-  printf "%-30s" "$cmd"
+  printf "%-20s" "$cmd"
   if hash "$cmd" 2>/dev/null; then printf "OK\n"; else printf "missing\n"; fi
 done
 

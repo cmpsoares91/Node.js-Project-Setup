@@ -73,6 +73,8 @@ function baseInstall() {
 	ln -sb dotfiles/.bashrc .
 	ln -sb dotfiles/.bashrc_custom .
 	ln -sf dotfiles/.emacs.d .
+	
+	sudo apt-get update
 }
 
 install=1

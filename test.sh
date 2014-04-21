@@ -9,7 +9,7 @@ done
 
 echo -e "\nTesting Basic command line editor installations:"
 for cmd in "rlwrap" "emacs" "nano"; do
-  printf "%-30s" "$cmd"
+  printf "%-10s" "$cmd"
   if hash "$cmd" 2>/dev/null; then printf "OK\n"; else printf "missing\n"; fi
 done
 

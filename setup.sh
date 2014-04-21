@@ -147,7 +147,6 @@ if [ $install == 1 ] ; then
                 	read myApp
                     mean init $myApp
                     cd $myApp && npm install
-                    grunt
                 elif [ $appOption == n ] ; then
                     #Nothing Happens...
                     coloredEcho "--> Not initiation App..." red

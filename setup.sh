@@ -47,9 +47,8 @@ function baseInstall() {
 	sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 	
 	#Installing last node and npm version
-	sudo apt-add-repository ppa:chris-lea/node.js
-	sudo apt-add-repository ppa:chris-lea/nodejs-legacy
-	sudo apt-get update
+	sudo apt-add-repository -y ppa:chris-lea/node.js
+	sudo apt-get -qq update
 	sudo apt-get install -y nodejs nodejs-legacy
 	
 	

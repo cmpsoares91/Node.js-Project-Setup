@@ -62,4 +62,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre>
 
-[![Analytics](https://ga-beacon.appspot.com/UA-61026805-1/Node.js-Project-Setup/README.md)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://ga-beacon.appspot.com/UA-61026805-1/GitHub/Node.js-Project-Setup/README.md)](https://github.com/igrigorik/ga-beacon)

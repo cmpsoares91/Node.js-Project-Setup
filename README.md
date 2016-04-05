@@ -7,7 +7,7 @@ the machine and your individual development environment as follows:
 ```sh
 wget https://raw.github.com/cmpsoares91/Node.js-Project-Setup/master/setup.sh
 
-#You can select the following options:
+# You can select the following options:
 # If you want to setup on a new EC2 instance running Ubuntu 12.04.2 LTS for final setup use:
 bash ./setup.sh server
 
